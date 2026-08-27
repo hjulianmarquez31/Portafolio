@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Héctor Márquez | Hoja de Vida</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #0b0f17;
+            --card-bg: rgba(18, 24, 38, 0.75);
+            --border-color: rgba(45, 55, 72, 0.7);
+            --primary-neon: #00f2fe;
+            --secondary-neon: #4facfe;
+            --accent-purple: #7928ca;
+            --text-main: #f0f6fc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 60px;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(121, 40, 202, 0.18) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(0, 242, 254, 0.15) 0px, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        /* Header / Hero */
+        .hero {
+            padding: 60px 20px 30px;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .avatar-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 0 25px rgba(0, 242, 254, 0.35);
+            border: 2px solid rgba(0, 242, 254, 0.5);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 30%, var(--primary-neon) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .contact-info {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 4px;
+        }
+
+        /* Botón Portafolio */
+        .cta-container {
+            margin-top: 15px;
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.25s ease;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--secondary-neon), var(--accent-purple));
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(79, 172, 254, 0.5);
+        }
+
+        /* Layout Principal */
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            margin: 35px 0 15px;
+            border-left: 4px solid var(--primary-neon);
+            padding-left: 14px;
+            color: #ffffff;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .cv-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .item-role {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .item-company {
+            color: var(--primary-neon);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .item-date {
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+
+        .cv-list {
+            padding-left: 20px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .cv-list li {
+            margin-bottom: 8px;
+        }
+
+        .skills-group {
+            margin-bottom: 15px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .skills-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .skills-group strong {
+            color: #ffffff;
+        }
+
+        /* Ocultar elementos */
+        .hidden {
+            display: none !important;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Información de Contacto -->
+    <header class="hero">
+        <div class="header-content">
+            <div>
+                <h1>HÉCTOR MÁRQUEZ</h1>
+                <div class="contact-info">
+                    <p>📍 Bucaramanga, Colombia</p>
+                    <p>📞 +57 3046246877</p>
+                    <p>✉️ hjmp1993@gmail.com</p>
+                </div>
+                <div class="cta-container">
+                    <button onclick="togglePortafolio()" class="btn btn-primary" style="cursor: pointer; border: none;">
+                        📁 Ver Portafolio de Proyectos
+                    </button>
+                </div>
+            </div>
+            <img src="hm.jpeg" alt="Héctor Márquez" class="avatar-img">
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- Resumen Profesional -->
+        <section>
+            <h2 class="section-title">Resumen Profesional</h2>
+            <article class="cv-card">
+                <p style="color: var(--text-muted); font-size: 0.98rem;">
+                    Ingeniero de sistemas que integra automatización con n8n, APIs, Linux, MySQL, PostgreSQL, Python, Django y Flask para transformar necesidades de negocio en soluciones técnicas claras y mantenibles. Desarrolla e implementa servicios web, agentes inteligentes con IA y monitoreo orientado a decisiones para optimizar procesos técnicos. También destaca por documentar 90% a 100% de las soluciones con especificación técnica, pasos de despliegue y guía de soporte, y el enfoque en mejora continua para sostener soluciones estables.
+                </p>
+            </article>
+        </section>
+
+        <!-- Habilidades -->
+        <section>
+            <h2 class="section-title">Habilidades</h2>
+            <article class="cv-card">
+                <div class="skills-group">
+                    <strong>Habilidades técnicas:</strong> Automatización de procesos con n8n e integración de APIs, administración de servidores Linux/Apache/Nginx, scripting en Bash y seguridad, base de datos: MySQL, PostgreSQL: diseño, optimización y respaldo; desarrollo web full stack: HTML, CSS, JavaScript y Python (Django/Flask), Documentación técnica en Markdown.
+                </div>
+                <div class="skills-group">
+                    <strong>Sistema de IA:</strong> Desarrollo de agentes inteligentes, ingeniería de prompts, aplicaciones con LLM, evaluación del modelo, IA generativa, bases de datos vectoriales.
+                </div>
+                <div class="skills-group">
+                    <strong>Entrega y Operaciones:</strong> Análisis de requisitos, coordinación técnica de proyectos, gestión de incidentes, gestión del cambio, mejora de procesos, planificación de la hoja de ruta técnica.
+                </div>
+            </article>
+        </section>
+
+        <!-- Experiencia Laboral -->
+        <section>
+            <h2 class="section-title">Experiencia Laboral</h2>
+            
+            <article class="cv-card">
+                <div class="item-header">
+                    <div>
+                        <div class="item-role">Ingeniero IA</div>
+                        <div class="item-company">IAbotSAS</div>
+                    </div>
+                    <span class="item-date">Febrero 2025 – Agosto 2025</span>
+                </div>
+                <ul class="cv-list">
+                    <li>Desarrollo de flujos de automatización con n8n e integración de APIs.</li>
+                    <li>Creación de agentes inteligentes con IA para monitoreo y toma de decisiones.</li>
+                    <li>Administración de servidores Linux (Apache/Nginx), scripting en Bash y seguridad.</li>
+                    <li>Gestión de bases de datos MySQL/PostgreSQL: diseño, optimización y respaldos.</li>
+                    <li>Desarrollo web full stack con HTML, CSS, JS y Python (Django/Flask).</li>
+                    <li>Documentación técnica en Markdown.</li>
+                </ul>
+            </article>
+
+            <article class="cv-card">
+                <div class="item-header">
+                    <div>
+                        <div class="item-role">Líder Comercial</div>
+                        <div class="item-company">Centro de Especialistas Grupo Vive</div>
+                    </div>
+                    <span class="item-date">Enero 2024 – Julio 2024</span>
+                </div>
+                <ul class="cv-list">
+                    <li>Supervisión y liderazgo de un equipo de 12 representantes de ventas, incluyendo capacitación, desarrollo y motivación del personal para alcanzar y superar los objetivos de ventas.</li>
+                    <li>Elaboración y presentación de informes detallados sobre el rendimiento de ventas, tendencias del mercado y pronósticos financieros a la alta dirección.</li>
+                    <li>Realización de auditorías internas para asegurar el cumplimiento de políticas y procedimientos de la empresa, identificando áreas de mejora e implementando planes de acción correctiva.</li>
+                    <li>Administración y mantenimiento de bases de datos de clientes y ventas, asegurando la integridad y precisión de los datos para apoyar la toma de decisiones estratégicas.</li>
+                </ul>
+            </article>
+
+            <article class="cv-card">
+                <div class="item-header">
+                    <div>
+                        <div class="item-role">Supervisor</div>
+                        <div class="item-company">AndicallSAS</div>
+                    </div>
+                    <span class="item-date">Enero 2023 – Enero 2024</span>
+                </div>
+                <ul class="cv-list">
+                    <li>A cargo del análisis y seguimiento de indicadores clave: adherencia, efectividad, NPS, calidad, tasa de abandono, TMO y tiempos de espera, evaluando constantemente el desempeño del equipo y proponiendo estrategias de mejora.</li>
+                    <li>Aseguramiento de que el equipo cumpliera con todos los horarios establecidos para garantizar un nivel óptimo de adherencia a las métricas del call center y la disponibilidad de personal durante los picos de demanda.</li>
+                    <li>Supervisión de la calidad de las interacciones entre los agentes y los clientes, utilizando grabaciones de llamadas y evaluaciones de desempeño para garantizar que se cumplieran los protocolos establecidos para una atención de calidad.</li>
+                    <li>Implementación de estrategias para mejorar la puntuación NPS (Net Promoter Score), trabajando con el equipo para asegurar que los clientes tuvieran una experiencia positiva.</li>
+                    <li>Identificación y abordaje de factores que causaban una alta tasa de abandono, tomando medidas para reducirla y mejorar la eficiencia de la atención y la satisfacción de los clientes.</li>
+                    <li>Reducción del TMO sin comprometer la calidad del servicio, implementando entrenamientos y capacitaciones para que los agentes fueran más eficientes en la resolución de consultas.</li>
+                </ul>
+            </article>
+        </section>
+
+        <!-- Educación -->
+        <section>
+            <h2 class="section-title">Educación</h2>
+            <article class="cv-card">
+                <div style="margin-bottom: 15px;">
+                    <div class="item-role">Ingeniería de Sistemas — 2026</div>
+                    <div class="item-company">Universidad Minuto de Dios (UNIMINUTO)</div>
+                </div>
+                <div>
+                    <div class="item-role">Diplomado en Marketing Digital — 2017</div>
+                    <div class="item-company">Politécnico Superior de Colombia</div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Cursos y Certificaciones -->
+        <section>
+            <h2 class="section-title">Cursos y Certificaciones</h2>
+            <article class="cv-card">
+                <ul class="cv-list">
+                    <li><strong>Auditor Interno ISO/IEC 27001:2022 Sistemas de Gestión Seguridad de la Información e ISO 27005:2022 Seguridad de la información, Ciberseguridad y Protección de la Privacidad</strong> — SGS Academy (Abril 2026)</li>
+                    <li><strong>Seguridad de Terminales</strong> — Cisco Networking Academy (Marzo 2025)</li>
+                    <li><strong>Conceptos Básicos de Redes</strong> — Cisco Networking Academy (Marzo 2025)</li>
+                    <li><strong>Coaching de Liderazgo</strong> — Politécnico Superior de Colombia (Enero 2021)</li>
+                    <li><strong>Protege tu Negocio: Ciberseguridad en el Trabajo</strong> — Google Activate (INCIBE) (Enero 2021)</li>
+                    <li><strong>Especialista Técnico Certificado Bitdefender</strong> — Bitdefender (Enero 2017)</li>
+                    <li><strong>Especialista en Ventas Certificadas Bitdefender</strong> — Bitdefender (Enero 2017)</li>
+                    <li><strong>Curso: Diseñar Páginas Web con HTML y JavaScript</strong> — Servicio Nacional de Aprendizaje (SENA)</li>
+                </ul>
+            </article>
+        </section>
+
+        <!-- Referencias -->
+        <section>
+            <h2 class="section-title">Referencias</h2>
+            <article class="cv-card">
+                <ul class="cv-list" style="list-style-type: none; padding-left: 0;">
+                    <li style="margin-bottom: 10px;"><strong>Michael Villa</strong> — Líder de Formación y Calidad | Tel: 3125744719</li>
+                    <li style="margin-bottom: 10px;"><strong>Jhon Villalba</strong> — Líder Comercial | Tel: 3193840601</li>
+                    <li><strong>David Beltrán</strong> — Independiente | Tel: 3123792290</li>
+                </ul>
+            </article>
+        </section>
+
+        <!-- Sección de Portafolio / Proyectos (Oculta por defecto) -->
+        <section id="portafolio" class="hidden">
+            <h2 class="section-title">Portafolio & Proyectos</h2>
+            <article class="cv-card" style="border-color: rgba(0, 242, 254, 0.4);">
+                <div class="item-header">
+                    <div>
+                        <div class="item-role">Frenahe Bot — Asistente de Atención al Cliente con IA</div>
+                        <div class="item-company">SaaS / Arquitectura RAG</div>
+                    </div>
+                </div>
+                <p style="color: var(--text-muted); margin-bottom: 15px;">
+                    Plataforma SaaS de asistencia inteligente diseñada para automatizar la atención al cliente 24/7 en Telegram mediante búsqueda semántica con bases vectoriales sobre manuales corporativos.
+                </p>
+                <a href="https://github.com/hjulianmarquez31/Frenahebot" target="_blank" class="btn btn-primary">Ver en GitHub</a>
+            </article>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 — Héctor Márquez</p>
+    </footer>
+
+    <script>
+        function togglePortafolio() {
+            const portafolioSec = document.getElementById('portafolio');
+            
+            // Alterna la visibilidad de la sección
+            portafolioSec.classList.toggle('hidden');
+            
+            // Si la sección pasa a ser visible, hace un scroll suave hacia ella
+            if (!portafolioSec.classList.contains('hidden')) {
+                portafolioSec.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>
