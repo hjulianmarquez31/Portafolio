@@ -212,7 +212,7 @@
                     <p>✉️ hjmp1993@gmail.com</p>
                 </div>
                 <div class="cta-container">
-                    <button onclick="togglePortafolio()" class="btn btn-primary" style="cursor: pointer; border: none;">
+                    <button id="btn-toggle" onclick="togglePortafolio()" class="btn btn-primary" style="cursor: pointer; border: none;">
                         📁 Ver Portafolio de Proyectos
                     </button>
                 </div>
@@ -392,12 +392,16 @@
     <script>
         function togglePortafolio() {
             const portafolioSec = document.getElementById('portafolio');
+            const btn = document.getElementById('btn-toggle');
             
-            // Alterna la visibilidad de la sección
+            // Alterna la clase hidden
             portafolioSec.classList.toggle('hidden');
             
-            // Si la sección pasa a ser visible, hace un scroll suave hacia ella
-            if (!portafolioSec.classList.contains('hidden')) {
+            // Cambia el texto del botón y desplaza la vista si está visible
+            if (portafolioSec.classList.contains('hidden')) {
+                btn.innerHTML = '📁 Ver Portafolio de Proyectos';
+            } else {
+                btn.innerHTML = '✖ Ocultar Portafolio';
                 portafolioSec.scrollIntoView({ behavior: 'smooth' });
             }
         }
